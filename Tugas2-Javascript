@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <table border="1" id="result">
+    <thead> 
+        <th bgcolor="yellow">Nama mahasiswa</th>
+        <th bgcolor="yellow">Grade</th>
+        <th bgcolor="yellow">Nilai</th>
+        <th bgcolor="yellow">Predikat</th>
+        <th bgcolor="yellow">Keterangan Lulus</th>
+    </thead>
+    <tbody>
+      
+    </tbody>
+  </table>
+    <script>
+
+        let angka;
+        for (angka=1; angka <= 10; angka++){
+            document.write('<br> No. ' +angka);
+        }
+        document.write('<hr>');
+        //pembatas
+
+        let angka1;
+        for(angka1=10; angka1 >=0; angka1--){
+            document.write('<br> No. ' +angka1)
+        }
+        document.write('<hr>');
+
+        let ganjil
+        for(ganjil=1; ganjil<=30; ganjil++){
+            if(ganjil % 2 == 1)document.write("<br> Cetak bilangan "+ganjil);
+        }
+
+        let mhs1 = {"nama": "Andi", 'nilai':80 };
+        let mhs2 = {"nama": "Ali", 'nilai':90 };
+        let mhs3 = {"nama": "Aji", 'nilai':70 };
+        let mhs4 = {"nama": "Ani", 'nilai':90 };
+        let mhs5 = {"nama": "Ando", 'nilai':100 };
+
+        let mahasiswa = [mhs1,mhs2,mhs3,mhs4,mhs5];
+
+       for (let i = 0; i  < mahasiswa.length; i++){
+            document.write('<hr>');
+            document.write(mahasiswa[i]);
+       }
+       for (m of mahasiswa){
+            document.write('<hr>');
+            document.write(m.nama+" dengan nilainya adalah " +m.nilai);
+            }
+
+        for (l of mahasiswa){
+            let ket = (l.nilai >= 60) ? "lulus" : "gagal";
+            let grade ="";
+            let predikat ="";
+
+            if(l.nilai > 85 && l.nilai <= 100) grade = "A";
+            else if(l.nilai > 75 && l.nilai <= 85) grade = "B";
+            else if(l.nilai > 60 && l.nilai <= 75) grade = "C";
+            else if(l.nilai > 30 && l.nilai <= 60) grade = "D";
+            else if(l.nilai > 0 && l.nilai <= 30) grade = "E";
+           
+
+            switch(grade){
+                case"A":predikat="Sempurna";break;
+                case"B":predikat="Baik";break;
+                case"C":predikat="Cukup";break;
+                case"D":predikat="Kurang";break;
+                case"E":predikat="Buruk";break;
+                case"":predikat="";break;
+                default : predikat =""; break;
+            }
+           
+            var result = document.getElementById("result").getElementsByTagName('tbody')[0];
+            var newRow = result.insertRow(0);
+           
+         
+            var cellMahasiswa = newRow.insertCell(0);
+            var cellGrade = newRow.insertCell(1);
+            var cellNilai = newRow.insertCell(2);
+            var cellPredikat = newRow.insertCell(3);
+            var cellLulus = newRow.insertCell(4);
+
+            cellMahasiswa.innerHTML = l.nama;
+            cellGrade.innerHTML = grade;
+            cellNilai.innerHTML = l.nilai;
+            cellPredikat.innerHTML = predikat;
+            cellLulus.innerHTML = ket;
+         
+        }
+
+    </script>
+</body>
+</html>
