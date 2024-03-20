@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas JQuery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2> Letakan Kursor ke masing masing kotak untuk melihat gambar</h2>
+
+    <div id="div1">
+        <audio src="duck.mp3" id="suaraBek"></audio>      
+    </div>
+
+    
+    <div id="div2">
+        <audio src="cat.mp3" id="suaraKucing"></audio>
+    </div>
+    
+    <div id="div3">
+        <audio src="ayam.mp3" id="suaraAyam"></audio>
+    </div>
+    
+
+    <script>
+        var audio1 = document.getElementById("suaraBek");
+        var audio2 = document.getElementById("suaraKucing");
+        var audio3 = document.getElementById("suaraAyam")
+        $("document").ready(function(){
+            $('#div1').mouseover(function(){
+               audio1.play()
+                $(this).css({
+                    background: "url('https://cdn.pixabay.com/photo/2023/03/04/15/53/duck-7829778_640.jpg')"
+                });
+            });
+      
+            $('div').mouseout(function(){
+                $(this).css({
+                    background: "green"
+                });
+            });
+
+            $('#div2').mouseover(function(){
+                audio2.play();
+                $(this).css({
+                    background: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR60CWvTu6iZS1fkmuwNvq1MDi2tRs6PYhQRRCxZak4Q&s')"
+                });
+            });
+
+            $('#div3').mouseover(function(){
+                audio3.play();
+                $(this).css({
+                    background: "url('https://media.istockphoto.com/id/180820020/photo/rooster.jpg?s=612x612&w=0&k=20&c=sChaTEJH60NT7oTUNk10OX31dqKMJ6nTlxMXzh0_0GE=')"
+                });
+               
+            });
+            
+        });
+
+    </script>
+</body>
+</html>
