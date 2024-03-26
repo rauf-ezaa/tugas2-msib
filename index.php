@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +12,12 @@
     <!-- Custom styles for this template-->
     <frameset rows="8%,4%,*,8%"border="1">
         <frame name="header" src="header.html"></frame>
-        <frame name="navigation"src="navigation.html"></frame>
+        <frame name="navigation"src="navigation.php"></frame>
         <frameset cols="8%,*"border="1">
-        <frame name="sidebar"src="sidebar.html"></frame>
-        <frame name="konten" src="biodata.html"></frame>
+        <frame name="sidebar"src="sidebar.php"></frame>
+        <frame name="konten" src="biodata.php"></frame>
     </frameset>
-    <frame name="copyright" src="copyright.html"></frame>
+    <frame name="copyright" src="copyright.php"></frame>
 </frameset>
 </head>
 <body>
