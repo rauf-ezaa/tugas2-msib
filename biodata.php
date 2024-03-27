@@ -1,3 +1,5 @@
+<?php include'var'
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,8 +7,9 @@
 
 </head>
 <body>
-<h1>Biodata Arrauuf Reza Firmansyah</h1>
+<h1>Biodata Arrauuf Reza sddada Firmansyah</h1>
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWD-HVlWxak7gmhHGEaV14J5N4AT-d_F3CKoSG4yviwg&s" alt="John Doe">
+
 <h2>Data Pribadi</h2>
 <p>Nama: Arrauuf Reza Firmansyah </p>
 <p>Alamat: Jl. jembatan 3 Blok A no 7</p>
