@@ -25,6 +25,7 @@
         'Nilai Tertinggi' => $nilaiTinggi,
         'Nilai Terendah ' => $nilaiRendah,
         'Rata-Rata Nilai' => $avgNilai,
+        'Jumlah Mahasiswa' => count($mahasiswa), 
         'Jumlah Nilai Keseluruhan' => $jumlahNilai,
     ];
 
