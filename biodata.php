@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 <?php include'var'
 ?>
 <!DOCTYPE html>
+=======
+<?php include'variable.php'?>
+>>>>>>> 7549f7ebb0f03ccf5d6dc03466daa8c5c8ccbd23
 <html>
 <head>
 <title>Tugas Biodata HTML</title>
@@ -11,14 +15,14 @@
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWD-HVlWxak7gmhHGEaV14J5N4AT-d_F3CKoSG4yviwg&s" alt="John Doe">
 
 <h2>Data Pribadi</h2>
-<p>Nama: Arrauuf Reza Firmansyah </p>
-<p>Alamat: Jl. jembatan 3 Blok A no 7</p>
-<p>Tanggal Lahir: 10 Juni 1990</p>
-<p>Nomor Telepon: 012345678 </p>
+<p> nama : <?php echo $nama?> </p>
+<p>Alamat: <?php echo $alamat?></p>
+<p>Tanggal Lahir: <?php echo $tgl?></p>
+<p>Nomor Telepon: <?php echo $notelp?> </p>
 
 <h2>Pendidikan</h2>
 <ul>
-<li>SD Nurul islam</li>
+<li>MI Nurul islam</li>
 <li>SMP 21</li>
 <li>SMKN 56 Jakarta</li>
 <li>Universitas Esa Unggul</li>
