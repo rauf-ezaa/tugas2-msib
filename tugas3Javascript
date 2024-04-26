@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <h2> Masukan data anda disini yaa</h2>
+        <label for="nama"> Masukan nama anda</label>
+        <input type="text" id="nama" placeholder="Input Nama Anda">
+        <hr>
+        <label for="pekerjaan">Masukkan Pekerjaan anda</label> 
+        <input type="text" id="pekerjaan" placeholder="Input Pekerjaan Anda">
+        <hr>
+        <label for="hobi">Masukkan hobi anda</label>
+        <input type="text" id="hobi" placeholder="Input hobi anda">
+        <button type="submit" onclick="salam()"> Click disini yakkk</button>
+    
+
+    <p id="hasil"></p>
+   
+    <script>
+        function salam(){
+            var nama = document.getElementById('nama').value
+            var pekerjaan = document.getElementById('pekerjaan').value
+            var hobi = document.getElementById('hobi').value
+
+            if(nama === null || nama ===""){
+                alert("hei nama anda belum diisi");
+            }
+           
+            if(pekerjaan === null ||pekerjaan ===""){
+                alert("hei pekerjaan anda belum diisi");
+            }
+
+            if(hobi === null ||hobi==="" ){
+                alert("hei kamu tidak punya hobi kah");
+            }
+
+            else{
+                hasilTxt = "haloo "+nama+" kamu memiliki pekerjaan "+pekerjaan+" dan hobi kamu adalah "+hobi;
+                }
+            
+             document.getElementById("hasil").innerHTML = hasilTxt;
+            }
+    </script>
+</body>
+</html>

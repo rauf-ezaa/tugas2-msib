@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4 Javascript Arrauuf Reza Firmansyah</title>
+</head>
+<body>
+            
+                <h2>
+                    Kalkulator sederhana menghitung gaji kayawan
+                </h2>
+                <label for="nama_karyawan">Nama karyawan : </label>
+                <input type="text" id="nama_karyawan">
+                <br>
+                <label for="menikah">Apakah Anda sudah menikah?</label>
+                <input type="checkbox" id="menikah" name="menikah">
+                <br><br>
+                <label for="jabatan">Jabatan : </label>
+                <select id="jabatan" name="jabatan">
+                    <option value="staff">Staff</option>
+                    <option value="manager">Manager</option>
+                    <option value="asisten_manager">Asisten Manager</option>
+                </select>
+                <button type="submit" onclick="hitung()" > Hitung</button>
+
+            <table id="result" border ="1"=>
+                <thead>
+                <tr>
+                    <th bgcolor="yellow"> Nama karyawan</th>
+                    <th bgcolor="yellow" >Jabatan</th>
+                    <th bgcolor="yellow" >Status Menikah</th>
+                    <th bgcolor="yellow" >Gaji</th>
+                    <th bgcolor="yellow" >Bonus</th>
+                    <th bgcolor="yellow"> Pajak </th>
+                </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+                <tfoot>
+                    <tr>
+                       
+                    </tr>
+                   
+                </tfoot>
+            </table>
+        <br>
+
+</body>
+    <script>
+        function hitung(){
+            var nama_karyawan = document.getElementById("nama_karyawan").value
+            var jabatan = document.getElementById("jabatan").value;
+            var isMenikah = document.getElementById("menikah").checked;
+            var gaji = 0;
+            var bonus = 0;
+
+            if (jabatan === "manager") {
+                gaji = 15000000;
+                bonus = 0;
+                pajak = gaji * 0.10;
+
+                if (isMenikah) {
+                    bonus = gaji * 0.20;
+                    pajak = gaji * 0.10;
+                }
+            } else if (jabatan === "asisten_manager") {
+                gaji = 10000000;
+                bonus = 0;
+                pajak = gaji * 0.10;
+
+                if (isMenikah) {
+                    bonus = gaji * 0.20;
+                    pajak = gaji * 0.10;
+                }
+            }
+                else if (jabatan === "staff") {
+                gaji = 5000000;
+                bonus = 0;
+                pajak = gaji * 0.10;
+
+                if (isMenikah) {
+                    bonus = gaji * 0.20;
+                    pajak = gaji * 0.10;
+                }
+            }
+
+           
+            var totalGaji = gaji + bonus - pajak;
+            var result = document.getElementById("result").getElementsByTagName('tbody')[0];
+            var result1 = document.getElementById("result").getElementsByTagName('tfoot')[0];
+            var newRow = result.insertRow(0);
+            var tfot = result1.insertRow(0);
+
+            var cellNamaKaryawan = newRow.insertCell(0);
+            var cellJabatan = newRow.insertCell(1);
+            var cellMenikah = newRow.insertCell(2);
+            var cellGaji = newRow.insertCell(3);
+            var cellBonus = newRow.insertCell(4);
+            var cellPajak = newRow.insertCell(5);
+            var cellsum = tfot.insertCell(0);
+            var cellTotalGaji = tfot.insertCell(1);
+
+            cellNamaKaryawan.innerHTML = nama_karyawan;
+            cellJabatan.innerHTML = jabatan;
+            cellMenikah.innerHTML = isMenikah ? "Sudah Menikah" : "Belum Menikah";
+            cellGaji.innerHTML = gaji;
+            cellBonus.innerHTML = bonus.toFixed(2); 
+            cellPajak.innerHTML = pajak;
+            cellsum.innerHTML =  "Total Gaji";
+            cellsum.rowSpan = 2
+            cellsum.colSpan = 5
+            cellTotalGaji.colSpan = 2
+            cellTotalGaji.innerHTML = totalGaji;
+
+        }
+        
+    </script>
+</html>
