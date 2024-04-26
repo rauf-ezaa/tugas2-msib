@@ -1,10 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php include'var'
-?>
+?>~
 <!DOCTYPE html>
 =======
 <?php include'variable.php'?>
 >>>>>>> 7549f7ebb0f03ccf5d6dc03466daa8c5c8ccbd23
+=======
+<?php include'variable.php'?>
+>>>>>>> a6ec3649f9a99cb0f6b5e303609eb6f3852df753
 <html>
 <head>
 <title>Tugas Biodata HTML</title>
