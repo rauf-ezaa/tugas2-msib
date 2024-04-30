@@ -1,0 +1,68 @@
+
+SELECT pesanan.id, pesanan.tanggal, pesanan.total, pelanggan.kode, pelanggan.nama,
+		kartu.nama as nama_kartu, kartu.diskon
+		FROM pesanan INNER JOIN pelanggan ON pesanan.pelanggan_id = pelanggan.id
+		INNER JOIN kartu ON pelanggan.kartu_id = kartu.id;
+
+ SELECT pembelian.id, pembelian.tanggal, pembelian.nomor, pembelian.jumlah, pembelian.harga,
+		produk.nama, vendor.nama, vendor.kontak FROM pembelian INNER JOIN produk
+		ON pembelian.produk_id = produk.id
+		INNER JOIN vendor ON pembelian.vendor_id = vendor.id;
+        
+-- -- 
+ CREATE VIEW Pesanan_Kartu_Pelanggan AS SELECT
+    pesanan.id,
+    pesanan.tanggal,
+    pesanan.total,
+    pelanggan.kode,
+    pelanggan.nama,
+    kartu.nama AS nama_kartu,
+    kartu.diskon
+FROM
+    pesanan
+INNER JOIN pelanggan ON pesanan.pelanggan_id = pesanan.id
+INNER JOIN kartu ON pelanggan.kartu_id = kartu.id;
+
+select * from Pesanan_Kartu_Pelanggan;
+
+-- TUGAS 4.3 TRANSACTION --
+
+-- membuat transaction
+start transaction;
+
+-- menambahkan 3 record input data barang
+insert into produk (id,kode,nama,harga_beli,harga_jual,stok,jenis_produk_id) values
+    ('','LXP02','DEll Inspiron',3400000,9000000,690,5),
+    ('','BRGX09','Transmisi Allison',2000000,5010000,10,4),
+    ('','BRGX12','I-ShiftB11R',33400000,78600000,79,3);
+
+-- Update Data produk
+UPDATE produk SET stok = 10 where id = 33;
+
+-- Membuat SavePoint --
+savepoint SV001;
+
+-- menghapus salah satu record data --
+delete from pembayaran where id = "1";
+
+-- melakukan rollback 
+rollback;
+
+-- update salah satu record data
+update pembayaran set status_pembayaran = "Lunas"  where id = 4 ;
+
+-- melakukan commit
+commit;
+
+// Pertanyaan Soal 
+
+// Kapan waktu yang tepat untuk menggunakan lock tables read
+Waktu yang tepat untuk menggunakan LOCK_TABLE_READ adalah Misalnya, bayangkan situasi di mana sistem sedang mengambil jumlah penjualan produk A. 
+Sementara itu, sebuah transaksi lain mengubah jumlah stok produk A. 
+Tanpa penguncian, data yang diambil oleh laporan mungkin tidak mencerminkan perubahan stok yang baru saja terjadi.
+
+//Kapan Waktu yang tepoat untuk menggunakan lock tables read
+Waktu yang tepat untuk menggunakan lock table write Misalnya, jika transaksi A sedang memperbarui stok produk X di toko A, dan pada saat yang sama, 
+transaksi B juga mencoba memperbarui stok produk X di toko B, tanpa penguncian, kedua transaksi dapat berkonflik dan menghasilkan hasil yang tidak terduga.
+
+
